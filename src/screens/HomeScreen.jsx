@@ -4,6 +4,8 @@ import * as Icon from "react-native-feather";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Categories from "../components/categories";
+import FeatureRow from "../components/featureRow";
+import { featured } from "../constants";
 import { themeColors } from "../theme";
 const HomeScreen = () => {
   return (
@@ -39,10 +41,22 @@ const HomeScreen = () => {
       <ScrollView
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
-          paddingBottom: 20,
+          paddingBottom: 60,
         }}
       >
         <Categories />
+
+        {/* Featured*/}
+        <View className="mt-5">
+          {[featured, featured, featured].map((feature, index) => (
+            <FeatureRow
+              key={index}
+              title={feature.title}
+              restaurants={feature.restaurants}
+              description={feature.description}
+            />
+          ))}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
