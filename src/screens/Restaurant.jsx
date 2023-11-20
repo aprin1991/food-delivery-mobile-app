@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 import * as Icon from "react-native-feather";
 import { ScrollView } from "react-native-gesture-handler";
 import CartIcon from "../components/cartIcon";
@@ -15,6 +15,7 @@ const Restaurant = () => {
   return (
     <View>
       <CartIcon />
+      <StatusBar style="light" />
       <ScrollView>
         <View>
           <Image className="h-72 w-full" source={item.image} />
