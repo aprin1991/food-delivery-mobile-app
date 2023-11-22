@@ -14,6 +14,7 @@ export default function DishRow({ dish }) {
   const basketItems = useSelector((state) =>
     selectBasketItemsById(state, dish.id)
   );
+
   const handleIncrease = () => {
     dispatch(addToBasket({ ...dish }));
   };

@@ -7,6 +7,7 @@ import { themeColors } from '../theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectRestaurant } from '../redux/features/restaurantSlice';
 import {
+  removeFromBasket,
   selectBasketItems,
   selectBasketTotal,
 } from '../redux/features/basketSlice';
@@ -29,7 +30,6 @@ const CartScreen = () => {
       return group;
     }, {});
     setGroupedItems(gItems);
-    // console.log('items: ',gItems);
   }, [basketItems]);
 
   return (

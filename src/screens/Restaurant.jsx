@@ -6,19 +6,14 @@ import { ScrollView } from 'react-native-gesture-handler';
 import CartIcon from '../components/cartIcon';
 import DishRow from '../components/dishRow';
 import { themeColors } from '../theme';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setRestaurant } from '../redux/features/restaurantSlice';
-import { selectBasketItemsById } from '../redux/features/basketSlice';
 
 const Restaurant = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const { params } = useRoute();
   const item = params;
-
-  const basketItems = useSelector((state) =>
-    selectBasketItemsById(state, item.id)
-  );
 
   useEffect(() => {
     if (item && item.id) {
@@ -28,7 +23,7 @@ const Restaurant = () => {
 
   return (
     <View>
-      {basketItems.length ? <CartIcon /> : null}
+      <CartIcon />
       <StatusBar style='light' />
       <ScrollView>
         <View>
