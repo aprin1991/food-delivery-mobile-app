@@ -4,6 +4,6 @@ import basketReducer from './features/basketSlice';
 export const store = configureStore({
   reducer: {
     basket: basketReducer,
-    resturant: RestaurantReducer,
+    restaurant: RestaurantReducer,
   },
 });
